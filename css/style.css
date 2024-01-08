@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px;
     color: var(--txt-color);
 }
 
@@ -127,6 +127,66 @@
 }
 
 .main {
-    width: 100%;
+    width: 40%;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main .about {
+    font-size: 18px;
+}
+.main .about p:first-child{
+    margin-bottom: 10px;
+}
+
+.main .skills {
+    width: 100%;
+}
+
+.main .skills .skill-card{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.main .skills .skill-card:hover{
+    background-color: #333;
+}
+
+.main .skills .skill-card span{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.main .skills .skill-card p{
+    font-weight: lighter;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.main .skills .skill-card .skills-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 3em;
+}
+.main .skills .skill-card .skills-container .skill{
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 10px;
+    transition: .1s ease all;
+    border: 1px solid #666;
+}
+.main .skills .skill-card .skills-container .skill:not(:first-child){
+    margin-left: .5em;
+}
+.main .skills .skill-card:hover .skills-container .skill{
+    border: 1px solid var(--txt-color);
 }
