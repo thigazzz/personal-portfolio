@@ -132,6 +132,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    overflow-y: scroll;
+    padding-bottom: 4em;
 }
 
 .main .about {
@@ -145,7 +147,7 @@
     width: 100%;
 }
 
-.main .skills .skill-card{
+.card {
     width: 100%;
     padding: 20px;
     margin-bottom: 2em;
@@ -154,22 +156,23 @@
     transition: .1s ease all;
 }
 
-.main .skills .skill-card:hover{
+
+.card:hover{
     background-color: #333;
 }
 
-.main .skills .skill-card span{
+.card span{
     font-weight: bold;
     font-style: italic;
 }
 
-.main .skills .skill-card p{
+.card p{
     font-weight: lighter;
     font-size: 14px;
     margin-top: 10px;
 }
 
-.main .skills .skill-card .skills-container{
+.main .skills .card .skills-container{
     width: 100%;
     display: flex;
     align-items: center;
@@ -177,16 +180,37 @@
     font-weight: bold;
     margin-top: 3em;
 }
-.main .skills .skill-card .skills-container .skill{
+.main .skills .card .skills-container .skill{
     padding: 5px 10px;
     color: #fff;
     border-radius: 10px;
     transition: .1s ease all;
     border: 1px solid #666;
 }
-.main .skills .skill-card .skills-container .skill:not(:first-child){
+.main .skills .card .skills-container .skill:not(:first-child){
     margin-left: .5em;
 }
-.main .skills .skill-card:hover .skills-container .skill{
+.main .skills .card:hover .skills-container .skill{
     border: 1px solid var(--txt-color);
+}
+.main .projects .card div{
+    width: 100%;
+    display: flex;
+    align-items: self-start;
+}
+.main .projects .card div img{
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+    margin-right: 20px;
+    cursor: zoom-in;
+}
+
+.main .projects .card div div{
+    display: flex;
+    flex-direction: column;
+}
+
+.main .projects .card .skills-container{
+    margin-top: 3em;
 }
