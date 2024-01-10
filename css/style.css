@@ -172,7 +172,7 @@
     margin-top: 10px;
 }
 
-.main .skills .card .skills-container{
+.skills-container{
     width: 100%;
     display: flex;
     align-items: center;
@@ -180,20 +180,24 @@
     font-weight: bold;
     margin-top: 3em;
 }
-.main .skills .card .skills-container .skill{
+.skill{
     padding: 5px 10px;
     color: #fff;
     border-radius: 10px;
     transition: .1s ease all;
     border: 1px solid #666;
 }
-.main .skills .card .skills-container .skill:not(:first-child){
+.skill:not(:first-child){
     margin-left: .5em;
 }
 .main .skills .card:hover .skills-container .skill{
     border: 1px solid var(--txt-color);
 }
-.main .projects .card div{
+.card:hover .skills-container .skill{
+    border: 1px solid var(--txt-color);
+}
+
+.main .projects .card .temp{
     width: 100%;
     display: flex;
     align-items: self-start;
@@ -205,12 +209,12 @@
     margin-right: 20px;
     cursor: zoom-in;
 }
-
-.main .projects .card div div{
-    display: flex;
-    flex-direction: column;
+.main .projects .card div img:hover{
+    transform: scale(1.05);
 }
 
-.main .projects .card .skills-container{
-    margin-top: 3em;
+
+.main .projects .card .temp div{
+    display: flex;
+    flex-direction: column;
 }
