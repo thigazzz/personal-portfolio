@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6em 2em;
+    padding: 4em 1em;
 }
 
 .info {
@@ -38,6 +38,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    padding: 2em;
 }
 
 .info .intro {
@@ -134,10 +135,12 @@
     flex-direction: column;
     overflow-y: scroll;
     padding-bottom: 4em;
+    padding: 2em;
 }
 
 .main .about {
     font-size: 18px;
+    margin-bottom: 3em;
 }
 .main .about p:first-child{
     margin-bottom: 10px;
