@@ -23,6 +23,7 @@
     color: var(--txt-color);
 }
 
+
 .center {
     height: 100%;
     width: 80%;
@@ -32,6 +33,15 @@
     padding: 4em 1em;
 }
 
+h3 {
+    font-size: 24px;
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .info {
     width: 40%;
     height: 100%;
@@ -139,11 +149,11 @@
 }
 
 .main .about {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 3em;
 }
-.main .about p:first-child{
-    margin-bottom: 10px;
+.main .about p:not(last-child){
+    margin-bottom: .5em;
 }
 
 .main .skills {
