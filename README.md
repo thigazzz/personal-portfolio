@@ -1,6 +1,6 @@
 # Personal Website Portfolio
 
-<img alt="home page image">
+<img alt="home page image" src="assets/page-picture-example.png">
 
 **My personal and self-coded website portfolio.**
 
