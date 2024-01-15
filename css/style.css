@@ -15,6 +15,9 @@
     --font-size-smaller: 0.8em; /* 24px */
     --font-size-small: 0.7em; /* 24px */
 
+    --m-common: 1em; /* 20px */
+    --mg-b: 1em; /* 20px */
+
 
     --br-aize-solid: 0.05em solid;
     --br-default: 0.5em; /* border-radius: 10px */
@@ -22,6 +25,12 @@
 
     --tr-default: .2s ease all; /* transition */
     --f-brightness: brightness(0.7); /* filter */
+
+
+
+    --stack-mg-t: 3em;
+    --stack-ml: 0.5em;
+    --stack-pd-default: 5px 10px;
 }
 
 * {
@@ -45,12 +54,16 @@
 
 h3 {
     font-size: var(--font-size-larger);
-    margin-bottom: 1em;
+    margin-bottom: var(--mg-b);
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+section {
+    margin-bottom: var(--mg-b);
 }
 
 .center {
@@ -71,11 +84,11 @@ a {
 
 .card {
     width: 100%;
-    padding: 20px;
-    margin-bottom: 2em;
+    padding: var(--m-common);
     border-radius: var(--br-default);
     cursor: pointer;
     transition: var(--tr-default);
+    margin-bottom: var(--mg-b);
 }
 
 
@@ -86,12 +99,12 @@ a {
 .card span{
     font-weight: bold;
     font-style: italic;
+    margin-bottom: var(--mg-b);
 }
 
 .card p{
     font-weight: lighter;
     font-size: var(--font-size-small);
-    margin-top: 10px;
 }
 
 .card .image-and-card-title{
@@ -103,7 +116,7 @@ a {
     width: 200px;
     height: 120px;
     border-radius: var(--br-default);
-    margin-right: 20px;
+    margin-right: var(--m-common);
     cursor: zoom-in;
 }
 .card .image-and-card-title img:hover{
@@ -123,17 +136,17 @@ a {
     align-items: center;
     font-size: var(--font-size-small);
     font-weight: bold;
-    margin-top: 3em;
+    margin-top: var(--stack-mg-t);
 }
 .stack{
-    padding: 5px 10px;
+    padding: var(--stack-pd-default);
     color: var(--txt-color-default);
     border-radius: var(--br-default);
     transition: var(--tr-default);
     border: var(--br-aize-solid) #666;
 }
 .stack:not(:first-child){
-    margin-left: .5em;
+    margin-left: var(--stack-ml);
 }
 .card:hover .stacks-container .stack{
     border: var(--br-aize-solid) var(--txt-color-default);
@@ -153,7 +166,7 @@ a {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 2em;
+    padding: var(--m-common);
 }
 
 .introduction {
@@ -164,12 +177,12 @@ a {
 .introduction h2 {
     font-size: var(--font-size-large);
     font-weight: normal;
-    margin-bottom: 5px;
+    margin-bottom: var(--mg-b);
 }
 .introduction h1 {
     font-size: var(--txt-color-default);
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: var(--mg-b);
 }
 .introduction span {
     font-size: var(--txt-color-default);
@@ -210,7 +223,7 @@ header nav ul li div{
 }
 
 header nav ul li p{
-    margin-left: 20px;
+    margin-left: var(--m-common);
 }
 
 header nav ul li:hover div{
@@ -235,7 +248,7 @@ header nav ul li:hover div{
     transition: var(--tr-default);
 }
 .contacts ul i:last-child{
-    padding-right: 20px;
+    padding-right: var(--m-common);
 }
 .contacts ul i:hover{
     filter: var(--f-brightness);
@@ -252,17 +265,5 @@ header nav ul li:hover div{
     flex-direction: column;
     overflow-y: scroll;
     padding-bottom: 4em;
-    padding: 2em;
+    padding: var(--m-common);
 }
-
-.about {
-    margin-bottom: 3em;
-}
-.about p:not(last-child){
-    margin-bottom: .5em;
-}
-
-.skills {
-    width: 100%;
-}
-
