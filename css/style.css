@@ -1,3 +1,5 @@
+/* Begin Root Style */
+
 :root {
     --bg-color-100: #111;
     --bg-color-200: #222;
@@ -23,6 +25,15 @@
     color: var(--txt-color);
 }
 
+h3 {
+    font-size: 24px;
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .center {
     height: 100%;
@@ -33,16 +44,98 @@
     padding: 4em 1em;
 }
 
-h3 {
-    font-size: 24px;
-    margin-bottom: 1em;
+/* End Root Style */
+
+
+/* Begin Componenets */
+
+/* Card */
+
+.card {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s ease all;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+
+.card:hover {
+    background-color: #333;
 }
-.info {
+
+.card span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card p {
+    font-weight: lighter;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.card .image-and-card-title {
+    width: 100%;
+    display: flex;
+    align-items: self-start;
+}
+
+.card .image-and-card-title img {
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+    margin-right: 20px;
+    cursor: zoom-in;
+}
+
+.card .image-and-card-title img:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+}
+
+/* STACKS */
+
+.stacks-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 3em;
+}
+
+.stack {
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 10px;
+    transition: .1s ease all;
+    border: 1px solid #666;
+}
+
+.stack:not(:first-child) {
+    margin-left: .5em;
+}
+
+.card:hover .stacks-container .stack {
+    border: 1px solid var(--txt-color);
+}
+
+.card:hover .stacks-container .stack {
+    border: 1px solid var(--txt-color);
+}
+
+/* End Componenets */
+
+
+/* Begin Informatios Section */
+
+.informations {
     width: 40%;
     height: 100%;
     display: flex;
@@ -51,38 +144,40 @@ a {
     padding: 2em;
 }
 
-.info .intro {
+.introduction {
     width: 100%;
     height: 40%;
-} 
+}
 
-.info .intro h2 {
+.introduction h2 {
     font-size: 32px;
     font-weight: normal;
     margin-bottom: 5px;
 }
-.info .intro h1 {
+
+.introduction h1 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 30px;
 }
-.info .intro span {
+
+.introduction span {
     font-size: 14px;
     font-weight: lighter;
 }
 
-.info header{
+header {
     width: 100%;
     height: 60%;
     display: flex;
     align-items: center;
 }
 
-.info header nav ul {
+header nav ul {
     list-style: none;
 }
 
-.info header nav ul li{
+header nav ul li {
     font-size: 18px;
     padding: .3em;
     position: relative;
@@ -93,11 +188,11 @@ a {
     transition: .2s all ease;
 }
 
-.info header nav ul li:hover{
+header nav ul li:hover {
     filter: brightness(0.7);
 }
 
-.info header nav ul li div{
+header nav ul li div {
     height: 10px;
     width: 10px;
     border-radius: 50px;
@@ -105,37 +200,43 @@ a {
     transition: .2s all ease;
 }
 
-.info header nav ul li p{
+header nav ul li p {
     margin-left: 20px;
 }
 
-.info header nav ul li:hover div{
+header nav ul li:hover div {
     width: 60px;
 }
 
-.info .contacts {
+.contacts {
     width: 100%;
     height: 20%;
     display: flex;
     align-items: end;
 }
 
-.info .contacts ul {
+.contacts ul {
     display: flex;
     align-items: center;
     list-style: none;
 }
-.info .contacts ul i{
+
+.contacts ul i {
     font-size: 34px;
     color: var(--txt-color);
     transition: .2s all ease;
 }
-.info .contacts ul i:last-child{
+
+.contacts ul i:last-child {
     padding-right: 20px;
 }
-.info .contacts ul i:hover{
+
+.contacts ul i:hover {
     filter: brightness(0.7);
 }
+
+/* End Informatios Section */
+
 
 .main {
     width: 40%;
@@ -148,86 +249,15 @@ a {
     padding: 2em;
 }
 
-.main .about {
+.about {
     font-size: 16px;
     margin-bottom: 3em;
 }
-.main .about p:not(last-child){
+
+.about p:not(last-child) {
     margin-bottom: .5em;
 }
 
-.main .skills {
+.skills {
     width: 100%;
-}
-
-.card {
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .1s ease all;
-}
-
-
-.card:hover{
-    background-color: #333;
-}
-
-.card span{
-    font-weight: bold;
-    font-style: italic;
-}
-
-.card p{
-    font-weight: lighter;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.skills-container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 3em;
-}
-.skill{
-    padding: 5px 10px;
-    color: #fff;
-    border-radius: 10px;
-    transition: .1s ease all;
-    border: 1px solid #666;
-}
-.skill:not(:first-child){
-    margin-left: .5em;
-}
-.main .skills .card:hover .skills-container .skill{
-    border: 1px solid var(--txt-color);
-}
-.card:hover .skills-container .skill{
-    border: 1px solid var(--txt-color);
-}
-
-.main .projects .card .temp{
-    width: 100%;
-    display: flex;
-    align-items: self-start;
-}
-.main .projects .card div img{
-    width: 200px;
-    height: 120px;
-    border-radius: 20px;
-    margin-right: 20px;
-    cursor: zoom-in;
-}
-.main .projects .card div img:hover{
-    transform: scale(1.05);
-}
-
-
-.main .projects .card .temp div{
-    display: flex;
-    flex-direction: column;
 }
