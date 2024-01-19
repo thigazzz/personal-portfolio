@@ -328,6 +328,16 @@ header.desktop nav ul li:hover div{
     .contacts {
         margin-top: var(--mg-b);
     }
+
+    .card .image-and-card-title img {
+        width: 100%;
+        height: auto;
+        margin-bottom: var(--mg-b);
+    }
+
+    .image-and-card-title {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -350,6 +360,27 @@ header.desktop nav ul li:hover div{
     .contacts {
         margin-top: 0;
     }
+    .card .image-and-card-title img {
+        width: 100%;
+        height: auto;
+        margin-bottom: var(--mg-b);
+    }
+
+    .image-and-card-title {
+        flex-direction: column;
+    }
+    .stacks-container {
+        flex-direction: column;
+    }
+    .stack {
+        width: 100%;
+        margin-bottom: var(--mg-b);
+        margin-left: 0;
+    }
+
+    .stack:not(:first-child){
+        margin-left: 0;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -362,6 +393,8 @@ header.desktop nav ul li:hover div{
         flex-direction: row;
         padding: 2em 1em;
     }
+
+
     .informations {
         width: 50%;
     }
@@ -392,6 +425,15 @@ header.desktop nav ul li:hover div{
     .main {
         width: 50%;
     }
+
+    .stacks-container {
+        align-items: start;
+    }
+    .stack {
+        width: 60%;
+    }
+
+
 }
 @media only screen and (min-width: 992px) {
     .center {
@@ -402,5 +444,24 @@ header.desktop nav ul li:hover div{
     }
     .main {
         width: 40%;
+    }
+    .card .image-and-card-title img {
+        width: 200px;
+        height: 120px;
+    }
+
+    .image-and-card-title {
+        flex-direction: row;
+    }
+
+    .stacks-container {
+        flex-direction: row;
+    }
+    .stack {
+        width: auto;
+        margin-bottom: 0;
+    }
+    .stack:not(:first-child){
+        margin-left: var(--stack-ml);
     }
 }
