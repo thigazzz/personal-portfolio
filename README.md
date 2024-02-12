@@ -6,7 +6,7 @@
 
 I decided to build my personal portfolio to showcase my skills, projects, studies, and evolution. This project serves as both a representation of my capabilities and a personal challenge, encompassing everything from conceptualization (design) to execution.
 
-### v1.0
+### v1.1
 
 ## Table of Contents
 - [Built with](#built-with)
