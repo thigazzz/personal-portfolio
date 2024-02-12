@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b74a99f4b9.js" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
     <title>Portfólio Pessoal</title>
 </head>
 
@@ -19,18 +20,24 @@
             <header class="mobile">
                 <nav>
                     <ul>
-                        <li>
-                            <div></div>
-                            <p>Sobre</p>
-                        </li>
-                        <li>
-                            <div></div>
-                            <p>Habilidades</p>
-                        </li>
-                        <li>
-                            <div></div>
-                            <p>Projetos</p>
-                        </li>
+                        <a href="#about">
+                            <li>
+                                <div></div>
+                                <p>Sobre</p>
+                            </li>
+                        </a>
+                        <a href="#skills">
+                            <li>
+                                <div></div>
+                                <p>Habilidades</p>
+                            </li>
+                        </a>
+                        <a href="#projects">
+                            <li>
+                                <div></div>
+                                <p>Projetos</p>
+                            </li>
+                        </a>
                     </ul>
                 </nav>
             </header>
@@ -45,18 +52,24 @@
                 <header class="desktop">
                     <nav>
                         <ul>
-                            <li>
-                                <div></div>
-                                <p>Sobre</p>
-                            </li>
-                            <li>
-                                <div></div>
-                                <p>Habilidades</p>
-                            </li>
-                            <li>
-                                <div></div>
-                                <p>Projetos</p>
-                            </li>
+                            <a href="#about">
+                                <li>
+                                    <div></div>
+                                    <p>Sobre</p>
+                                </li>
+                            </a>
+                            <a href="#skills">
+                                <li>
+                                    <div></div>
+                                    <p>Habilidades</p>
+                                </li>
+                            </a>
+                            <a href="#projects">
+                                <li>
+                                    <div></div>
+                                    <p>Projetos</p>
+                                </li>
+                            </a>
                         </ul>
                     </nav>
                 </header>
@@ -73,7 +86,7 @@
             <main class="main">
 
                 <!-- Begin About -->
-                <section class="about">
+                <section class="about" id="about">
                     <h3>Sobre mim</h3>
                     <p>Eaí! Me chamo Thiago Pereira da Silva, tenho 18 anos e sou de São Paulo, Brasil. Adoro
                         programação e criar beats de trap.</p>
@@ -90,7 +103,7 @@
                 <!-- End About -->
 
                 <!-- Begin Skills -->
-                <section class="skills">
+                <section class="skills" id="skills">
                     <h3>Habilidades</h3>
                     <div class="card">
                         <div class="card-title">
@@ -143,7 +156,7 @@
                 <!-- End Skills -->
 
                 <!-- Begin Projects -->
-                <section class="projects">
+                <section class="projects" id="projects">
                     <h3>Projetos</h3>
                     <div class="card">
                         <a href="https://github.com/thigazzz/flight-scraper" target="_blank">
