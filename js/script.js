@@ -1,8 +1,12 @@
 (function(document, window){
+
+    // TODO: Put this is a InternalLinks function
     window.addEventListener('load', () => {
         document.querySelectorAll("header").forEach(header => {
             scrollToSections(header)
         })
+        clickOutsideOfModal()
+        expandProjectImage()
     })
     function scrollToSections(header) {
         navItems = header.querySelectorAll("a[href^='#']").forEach(nav => {
@@ -30,6 +34,40 @@
             top: to,
             behavior: 'smooth',
         })
+    }
+
+    function expandProjectImage() {
+        const imageContainer = document.querySelectorAll(".image-container")
+            .forEach(container => {
+                container.addEventListener('click', (event) => {
+                    srcOfImage = container.querySelector('img').getAttribute("src")
+                    displayImage(srcOfImage)
+                    event.preventDefault()
+                })
+            })
+    }
+    function displayImage(href) {
+        copyImage = document.createElement('img')
+        copyImage.classList.add("image-card")
+        copyImage.setAttribute("alt", "nada por enquanto")
+        copyImage.setAttribute("src", href)
+        openModal(copyImage)
+    }
+    function openModal(content) {
+        modal = document.querySelector('.modal').classList.add('show')
+        contentContainer = document.querySelector(".modal .container .content")
+        contentContainer.appendChild(content)
+    }
+
+    function clickOutsideOfModal() {
+        container = document.querySelector(".modal .container")
+        container.addEventListener('click', (event) => closeModal())
+    }
+
+    function closeModal() {
+        contentContainer = document.querySelector(".modal .container .content")
+        contentContainer.removeChild(contentContainer.firstElementChild)
+        modal = document.querySelector('.modal').classList.remove('show')
     }
 })(document, window)
 
