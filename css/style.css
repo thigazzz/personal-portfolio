@@ -62,8 +62,10 @@
     position: absolute;
     width: 50%;
     height: 60%;
-    background-color: white;
     border-radius: var(--br-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .root {
@@ -137,12 +139,13 @@ section {
     display: flex;
     align-items: self-start;
 }
-.card .image-and-card-title img{
+.card .image-and-card-title .image-container{
     width: 200px;
     height: 120px;
     border-radius: var(--br-default);
     margin-right: var(--m-common);
     cursor: zoom-in;
+    overflow: hidden;
 }
 .card .image-and-card-title img:hover{
     transform: scale(1.05);
@@ -178,6 +181,11 @@ section {
 }
 .card:hover .stacks-container .stack{
     border: var(--br-aize-solid) var(--txt-color-default);
+}
+
+.image-card {
+    width: 100%;
+    height: 100%;
 }
 
 /* End Componenets */
