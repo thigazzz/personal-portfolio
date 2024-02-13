@@ -40,6 +40,34 @@
     box-sizing: border-box;
     font-family: 'Fira Mono', monospace;
 }
+.modal {
+    display: none;
+}
+.modal.show {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .7);
+}
+.modal .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .container .content {
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    border-radius: var(--br-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
 .root {
     width: 100vw;
@@ -112,12 +140,13 @@ section {
     display: flex;
     align-items: self-start;
 }
-.card .image-and-card-title img{
+.card .image-and-card-title .image-container{
     width: 200px;
     height: 120px;
     border-radius: var(--br-default);
     margin-right: var(--m-common);
     cursor: zoom-in;
+    overflow: hidden;
 }
 .card .image-and-card-title img:hover{
     transform: scale(1.05);
@@ -153,6 +182,11 @@ section {
 }
 .card:hover .stacks-container .stack{
     border: var(--br-aize-solid) var(--txt-color-default);
+}
+
+.image-card {
+    width: 100%;
+    height: 100%;
 }
 
 /* End Componenets */
