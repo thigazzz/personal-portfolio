@@ -383,6 +383,18 @@ header.desktop nav ul li:hover div{
     .image-and-card-title {
         flex-direction: column;
     }
+    .stacks-container {
+        flex-direction: column;
+    }
+    .stack {
+        width: 100%;
+        margin-bottom: var(--mg-b);
+        margin-left: 0;
+    }
+
+    .stack:not(:first-child){
+        margin-left: 0;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -493,6 +505,7 @@ header.desktop nav ul li:hover div{
 
     .stacks-container {
         align-items: start;
+        
     }
     .stack {
         width: 60%;
