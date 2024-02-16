@@ -22,7 +22,7 @@
                 }
                 else {
                     window.scrollTo(0, 400)
-                    to =  topOfTargetElement - 20
+                    to =  topOfTargetElement - 120
                     withElement = window
                 }
                 scrollWith(withElement, to)
