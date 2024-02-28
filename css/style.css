@@ -324,6 +324,17 @@ header.desktop nav ul li:hover div{
         --mg-b: 1.3em; /* 20px */
     }
 
+    .modal.show {
+        position: fixed;
+        height: 100%;
+        z-index: 2;
+    }
+    
+    .modal .container .content {
+        width: 95%;
+        height: 40%;
+    }
+
     .center {
         height: 100%;
         width: 100%;
@@ -363,7 +374,7 @@ header.desktop nav ul li:hover div{
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 2;
+        z-index: 1;
         width: 100%;
         padding: var(--m-common);
         background-color: #111;
