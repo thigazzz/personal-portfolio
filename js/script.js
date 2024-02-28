@@ -37,10 +37,19 @@
     }
 
     function expandProjectImage() {
+
         const imageContainer = document.querySelectorAll(".image-container")
-            .forEach(container => {
-                container.addEventListener('click', (event) => {
-                    srcOfImage = container.querySelector('img').getAttribute("src")
+        .forEach(container => {
+            container.addEventListener('click', (event) => {
+                    _typeOfDevice = ''
+                    header = document.querySelectorAll("header").forEach(h => {
+                        if ( window.getComputedStyle(h).display != 'none') {
+                            _typeOfDevice = h.getAttribute("class")
+                        }
+                    })
+                    href = container.querySelector('img').getAttribute("src").split("-")
+                    srcOfImage = href[0]
+                    srcOfImage += "-" + _typeOfDevice + ".png"
                     displayImage(srcOfImage)
                     event.preventDefault()
                 })

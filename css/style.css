@@ -40,6 +40,8 @@
     box-sizing: border-box;
     font-family: 'Fira Mono', monospace;
 }
+
+/* TODO: Block scrollbar when modal is open */
 .modal {
     display: none;
 }
@@ -323,6 +325,7 @@ header.desktop nav ul li:hover div{
         --m-common: 1.3em; /* 20px */
         --mg-b: 1.3em; /* 20px */
     }
+
 
     .modal.show {
         position: fixed;
