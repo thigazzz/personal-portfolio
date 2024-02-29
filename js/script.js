@@ -1,35 +1,44 @@
 (function(document, window){
 
-    // TODO: Put this is a InternalLinks function
     window.addEventListener('load', () => {
-        document.querySelectorAll("header").forEach(header => {
-            scrollToSections(header)
-        })
+        main()
+    })
+
+
+    function main() {
+        addInternLinks()
         clickOutsideOfModal()
         expandProjectImage()
-    })
-    function scrollToSections(header) {
-        navItems = header.querySelectorAll("a[href^='#']").forEach(nav => {
-            nav.addEventListener('click', event => {
+    }
+
+    function addInternLinks() {
+        document.querySelectorAll("header a[href^='#']").forEach(navElement => {
+            const idOfSection = navElement.getAttribute("href")
+            navElement.addEventListener('click', event => {
+                headerElement = navElement.parentElement.parentElement.parentElement
+                deviceType = headerElement.getAttribute("class")
                 event.preventDefault()
-                const idOfSection = nav.getAttribute("href")
-                const topOfTargetElement = document.querySelector(idOfSection).offsetTop
-                var to = 0
-                if (header.getAttribute("class") == 'desktop') {
-                    mainContainer = document.querySelector(".main")
-                    to =  topOfTargetElement - mainContainer.offsetTop
-                    withElement = mainContainer
-                }
-                else {
-                    window.scrollTo(0, 400)
-                    to =  topOfTargetElement - 120
-                    withElement = window
-                }
-                scrollWith(withElement, to)
+                scrollToSection(idOfSection, deviceType)
             })
         })
     }
-    function scrollWith(element, to) {
+    
+    function scrollToSection(idOfSection, deviceType) {
+        const topOfTargetElement = document.querySelector(idOfSection).offsetTop
+        
+        if (deviceType == 'desktop') {
+            fromWhere = document.querySelector(".main")
+            toWhere =  topOfTargetElement - fromWhere.offsetTop
+        }
+        else {
+            fromWhere = window
+            toWhere =  topOfTargetElement - 120
+        }
+
+        scrollFor(fromWhere, toWhere)
+    }
+
+    function scrollFor(element, to) {
         element.scrollTo({
             top: to,
             behavior: 'smooth',
