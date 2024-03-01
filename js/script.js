@@ -13,6 +13,8 @@
         return deviceType
     }
 
+    const modalEl = document.querySelector('.modal')
+
     function main() {
         addInternLinks()
         clickOutsideOfModal()
@@ -51,6 +53,19 @@
         })
     }
 
+    function expandProjectImage() {
+        document.querySelectorAll(".image-container")
+        .forEach(container => {
+            container.addEventListener('click', (event) => {
+                    href = container.querySelector('img').getAttribute("src").split("-")
+                    srcOfImage = href[0]
+                    srcOfImage += "-" + currentDeviceType() + ".png" // ex: assets/img1 + - + desktop + .png
+                    displayImage(srcOfImage)
+                    event.preventDefault()
+                })
+            })
+    }
+
     function displayImage(href) {
         copyImage = document.createElement('img')
         copyImage.classList.add("image-card")
@@ -59,39 +74,20 @@
         openModal(copyImage)
     }
     function openModal(content) {
-        modal = document.querySelector('.modal').classList.add('show')
-        contentContainer = document.querySelector(".modal .container .content")
-        contentContainer.appendChild(content)
+        modalEl.classList.add('show')
+        document.querySelector(".modal .container .content").appendChild(content)
     }
 
     function clickOutsideOfModal() {
         container = document.querySelector(".modal .container")
-        container.addEventListener('click', (event) => closeModal())
+        container.addEventListener('click', () => closeModal())
     }
 
     function closeModal() {
         contentContainer = document.querySelector(".modal .container .content")
         contentContainer.removeChild(contentContainer.firstElementChild)
-        modal = document.querySelector('.modal').classList.remove('show')
+        modalEl.classList.remove('show')
     }
 
-    function expandProjectImage() {
-        const imageContainer = document.querySelectorAll(".image-container")
-        .forEach(container => {
-            container.addEventListener('click', (event) => {
-                    _typeOfDevice = ''
-                    header = document.querySelectorAll("header").forEach(h => {
-                        if ( window.getComputedStyle(h).display != 'none') {
-                            _typeOfDevice = h.getAttribute("class")
-                        }
-                    })
-                    href = container.querySelector('img').getAttribute("src").split("-")
-                    srcOfImage = href[0]
-                    srcOfImage += "-" + _typeOfDevice + ".png"
-                    displayImage(srcOfImage)
-                    event.preventDefault()
-                })
-            })
-    }
 })(document, window)
 
