@@ -4,6 +4,14 @@
         main()
     })
 
+    function currentDeviceType() {
+        document.querySelectorAll("header").forEach(header => {
+            if ( window.getComputedStyle(header).display != 'none') {
+                deviceType = header.getAttribute("class")
+            }
+        })
+        return deviceType
+    }
 
     function main() {
         addInternLinks()
@@ -15,10 +23,8 @@
         document.querySelectorAll("header a[href^='#']").forEach(navElement => {
             const idOfSection = navElement.getAttribute("href")
             navElement.addEventListener('click', event => {
-                headerElement = navElement.parentElement.parentElement.parentElement
-                deviceType = headerElement.getAttribute("class")
                 event.preventDefault()
-                scrollToSection(idOfSection, deviceType)
+                scrollToSection(idOfSection, currentDeviceType())
             })
         })
     }
@@ -45,25 +51,6 @@
         })
     }
 
-    function expandProjectImage() {
-
-        const imageContainer = document.querySelectorAll(".image-container")
-        .forEach(container => {
-            container.addEventListener('click', (event) => {
-                    _typeOfDevice = ''
-                    header = document.querySelectorAll("header").forEach(h => {
-                        if ( window.getComputedStyle(h).display != 'none') {
-                            _typeOfDevice = h.getAttribute("class")
-                        }
-                    })
-                    href = container.querySelector('img').getAttribute("src").split("-")
-                    srcOfImage = href[0]
-                    srcOfImage += "-" + _typeOfDevice + ".png"
-                    displayImage(srcOfImage)
-                    event.preventDefault()
-                })
-            })
-    }
     function displayImage(href) {
         copyImage = document.createElement('img')
         copyImage.classList.add("image-card")
@@ -86,6 +73,25 @@
         contentContainer = document.querySelector(".modal .container .content")
         contentContainer.removeChild(contentContainer.firstElementChild)
         modal = document.querySelector('.modal').classList.remove('show')
+    }
+
+    function expandProjectImage() {
+        const imageContainer = document.querySelectorAll(".image-container")
+        .forEach(container => {
+            container.addEventListener('click', (event) => {
+                    _typeOfDevice = ''
+                    header = document.querySelectorAll("header").forEach(h => {
+                        if ( window.getComputedStyle(h).display != 'none') {
+                            _typeOfDevice = h.getAttribute("class")
+                        }
+                    })
+                    href = container.querySelector('img').getAttribute("src").split("-")
+                    srcOfImage = href[0]
+                    srcOfImage += "-" + _typeOfDevice + ".png"
+                    displayImage(srcOfImage)
+                    event.preventDefault()
+                })
+            })
     }
 })(document, window)
 
